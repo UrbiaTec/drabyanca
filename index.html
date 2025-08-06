@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Dra. Byanca do Prado - Endodontista em Itajubá, MG | Clínica COE</title>
+    <meta name="description" content="Especialista em endodontia em Itajubá. Tratamentos de canal com tecnologia avançada, em um ambiente acolhedor na Clínica COE. Veja nossas avaliações e agende!">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (for Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS for utility classes and responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Custom CSS to complement Tailwind */
+        :root {
+            --primary-pink: #D6B8B8; /* Cor do logo */
+            --soft-beige: #F5F1ED;
+            --dark-blue: #0A2D4D; /* Inspirado no jaleco */
+            --text-color: #555;
+            --whatsapp-green: #25D366;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--soft-beige);
+            color: var(--text-color);
+        }
+
+        h2, .font-heading {
+            font-family: var(--font-heading);
+            color: var(--dark-blue);
+        }
+        
+        .bg-primary-pink { background-color: var(--primary-pink); }
+        .bg-soft-beige { background-color: var(--soft-beige); }
+        .bg-dark-blue { background-color: var(--dark-blue); }
+        .text-primary-pink { color: var(--primary-pink); }
+        .text-dark-blue { color: var(--dark-blue); }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ Accordion styles */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            padding: 0 1.5rem;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Adjust as needed */
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .faq-item.active .faq-chevron {
+            transform: rotate(180deg);
+        }
+        
+        /* Mobile menu transition */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Header on Scroll */
+        #header.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Shape Divider */
+        .shape-divider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+
+        .shape-divider .shape-fill {
+            fill: var(--soft-beige);
+        }
+        
+        .hero-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: transparent; /* Removendo a transparência */
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: inline-block; /* Limita a largura da tarja ao conteúdo do texto */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 1rem;
+            border-radius: 8px; /* Adiciona bordas arredondadas para um visual mais elegante */
+        }
+
+        /* Hero Section Background Image */
+        #inicio {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-bottom: 2rem; /* Adiciona espaço abaixo do conteúdo */
+        }
+
+        /* Mover estilos inline para o CSS externo */
+        .hero-content {
+            background-color: rgba(255, 255, 255, 0.7);
+            width: fit-content;
+            padding: 1rem;
+        }
+
+        /* Adicionar rel="noopener" diretamente nos links externos */
+        .mobile-nav-link[href*="https://wa.me"],
+        .mobile-nav-link[href*="https://g.co"] {
+            rel: noopener;
+        }
+
+        /* Adicionar título ao botão do menu móvel */
+        #mobile-menu-button::after {
+            content: "Abrir menu móvel";
+        }
+
+        /* Adicionar título ao iframe */
+        iframe {
+            title: "Localização da Clínica COE";
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="bg-white/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 transition-shadow duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="text-2xl font-heading text-dark-blue">Dra. Byanca Prado</a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#sobre" class="text-gray-600 hover:text-primary-pink transition">Sobre</a>
+                <a href="#servicos" class="text-gray-600 hover:text-primary-pink transition">Serviços</a>
+                <a href="#diferenciais" class="text-gray-600 hover:text-primary-pink transition">Diferenciais</a>
+                <a href="#depoimentos" class="text-gray-600 hover:text-primary-pink transition">Depoimentos</a>
+                <a href="#faq" class="text-gray-600 hover:text-primary-pink transition">FAQ</a>
+                <a href="#contato" class="text-gray-600 hover:text-primary-pink transition">Contato</a>
+            </nav>
+            
+            <a href="#contato" class="hidden md:inline-block bg-dark-blue text-white px-5 py-2 rounded-lg hover:bg-primary-pink transition transform hover:-translate-y-0.5 shadow-md hover:shadow-lg">Agende sua Avaliação</a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl text-dark-blue" title="Abrir menu móvel">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white absolute top-full left-0 w-full -translate-y-[150%] shadow-lg">
+            <nav class="flex flex-col items-center py-8 space-y-6">
+                <a href="#sobre" class="mobile-nav-link text-gray-700 text-lg">Sobre</a>
+                <a href="#servicos" class="mobile-nav-link text-gray-700 text-lg">Serviços</a>
+                <a href="#diferenciais" class="mobile-nav-link text-gray-700 text-lg">Diferenciais</a>
+                <a href="#depoimentos" class="mobile-nav-link text-gray-700 text-lg">Depoimentos</a>
+                <a href="#faq" class="mobile-nav-link text-gray-700 text-lg">FAQ</a>
+                <a href="#contato" class="mobile-nav-link text-gray-700 text-lg">Contato</a>
+                <a href="#contato" class="mobile-nav-link bg-dark-blue text-white px-6 py-3 rounded-lg mt-4">Agende sua Avaliação</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="min-h-screen bg-cover bg-center flex items-center pt-16 relative hero-overlay" style="background-image: url('consultorio.png');">
+            <div class="container mx-auto px-6 hero-content">
+                <div class="max-w-lg text-left fade-in">
+                    <h1 class="text-6xl md:text-7xl font-heading text-dark-blue whitespace-nowrap">Dra. Byanca do Prado</h1>
+                    <p class="text-2xl text-dark-blue mt-2 mb-4 font-semibold">ENDODONTISTA</p>
+                    <p class="text-lg mb-8 text-gray-700">Cuidado, delicadeza e precisão para a saúde do seu sorriso em Itajubá.</p>
+                    <a href="#contato" class="bg-dark-blue text-white px-8 py-3 rounded-lg hover:bg-primary-pink transition transform hover:-translate-y-0.5 text-lg shadow-lg hover:shadow-xl">Agende sua Avaliação</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Section -->
+        <section id="sobre" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl text-center mb-12 fade-in">Sobre Mim</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <!-- IMPORTANTE: Substitua o link abaixo pelo caminho da sua foto. Ex: 'dra_byanca.jpg' -->
+                        <img src="by.jpg" alt="Retrato da Dra. Byanca do Prado" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="text-lg space-y-6 fade-in leading-relaxed">
+                        <p>Dra. Byanca do Prado é especialista em endodontia, reconhecida por sua atuação ética, humanizada e voltada para o bem-estar do paciente em Itajubá, MG. Formada em Odontologia em 2012, realizou atualização em Endodontia em 2013 pela ABO de Pouso Alegre e concluiu a especialização em Endodontia também pela ABO de Pouso Alegre.</p>
+                        <p>Com formação sólida e compromisso com o aperfeiçoamento profissional, oferece tratamentos de canal precisos, utilizando instrumentos rotatórios e raio X digital, proporcionando diagnósticos rápidos e procedimentos menos invasivos para seus pacientes.</p>
+                        <p>Seu trabalho se destaca pelo cuidado individualizado, valorizando o acolhimento em todas as etapas e a preservação dos dentes naturais. Dra. Byanca atende exclusivamente na Clínica COE, onde proporciona uma experiência diferenciada, baseada em confiança, transparência e respeito.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Shape Divider -->
+        <div class="shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <!-- Serviços Section -->
+        <section id="servicos" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl text-center mb-12 fade-in">Cuidados, Delicadeza e Precisão</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-soft-beige p-8 rounded-lg shadow-lg text-center fade-in hover:shadow-2xl hover:transform hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-tooth text-5xl text-primary-pink mb-4"></i>
+                        <h3 class="text-2xl font-heading mb-3">Tratamento de Canal</h3>
+                        <p class="mb-4">Uso de rotatório e Radiografia Digital.</p>
+                        <ul class="text-left inline-block space-y-2">
+                            <li><i class="fas fa-check text-dark-blue mr-2"></i> Precisão</li>
+                            <li><i class="fas fa-check text-dark-blue mr-2"></i> Acompanhamento Digital</li>
+                            <li><i class="fas fa-check text-dark-blue mr-2"></i> Conclusão ágil</li>
+                        </ul>
+                    </div>
+                    <div class="bg-soft-beige p-8 rounded-lg shadow-lg text-center fade-in hover:shadow-2xl hover:transform hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-heart-pulse text-5xl text-primary-pink mb-4"></i>
+                        <h3 class="text-2xl font-heading mb-3">Clínica Geral</h3>
+                        <p class="mb-4">Cuidados essenciais para a sua saúde bucal.</p>
+                        <ul class="text-left inline-block space-y-2">
+                            <li><i class="fas fa-check text-dark-blue mr-2"></i> Restaurações</li>
+                            <li><i class="fas fa-check text-dark-blue mr-2"></i> Limpezas Profissionais</li>
+                            <li><i class="fas fa-check text-dark-blue mr-2"></i> Prevenção e Diagnóstico</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diferenciais Section -->
+        <section id="diferenciais" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl text-center mb-12 fade-in">Nossos Diferenciais</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 fade-in">
+                        <div class="bg-soft-beige inline-block p-5 rounded-full mb-4"><i class="fas fa-cogs text-5xl text-primary-pink"></i></div>
+                        <h3 class="text-2xl font-heading mb-3">Instrumentos Rotatórios</h3>
+                        <p>Tecnologia avançada para tratamentos mais precisos e eficientes, garantindo maior conforto e menor tempo de tratamento.</p>
+                    </div>
+                    <div class="text-center p-6 fade-in">
+                        <div class="bg-soft-beige inline-block p-5 rounded-full mb-4"><i class="fas fa-x-ray text-5xl text-primary-pink"></i></div>
+                        <h3 class="text-2xl font-heading mb-3">Raio X Digital</h3>
+                        <p>Diagnóstico preciso com imagem instantânea e menor exposição à radiação, para sua segurança e tranquilidade.</p>
+                    </div>
+                    <div class="text-center p-6 fade-in">
+                        <div class="bg-soft-beige inline-block p-5 rounded-full mb-4"><i class="fas fa-hand-holding-heart text-5xl text-primary-pink"></i></div>
+                        <h3 class="text-2xl font-heading mb-3">Atendimento Humanizado</h3>
+                        <p>Cuidado personalizado e acolhedor em cada consulta, com escuta ativa para entender suas necessidades individuais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos Section -->
+        <section id="depoimentos" class="py-20 bg-soft-beige">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl text-center mb-12 fade-in">O que dizem nossos pacientes</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Depoimento 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
+                        <div class="text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="italic mb-4">"Atendimento excelente, a Dra Byanca é muito atenciosa e cuidadosa. Me senti muito segura durante todo o procedimento."</p>
+                        <p class="font-bold text-dark-blue">Maria S. <i class="fab fa-google text-sm ml-1"></i></p>
+                    </div>
+                    <!-- Depoimento 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
+                        <div class="text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="italic mb-4">"Profissionalismo impecável! Tinha muito medo de fazer canal e a Dra. Byanca transformou a experiência. Sem dor e com muita tecnologia."</p>
+                        <p class="font-bold text-dark-blue">João P. <i class="fab fa-google text-sm ml-1"></i></p>
+                    </div>
+                    <!-- Depoimento 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
+                        <div class="text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="italic mb-4">"A melhor endodontista de Itajubá, sem dúvidas. Cuidou do meu dente com uma delicadeza e precisão que nunca vi."</p>
+                        <p class="font-bold text-dark-blue">Ana C. <i class="fab fa-google text-sm ml-1"></i></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-4xl text-center mb-12 fade-in">Perguntas Frequentes</h2>
+                <div class="space-y-4 fade-in">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-soft-beige/50 rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                            <span class="text-lg font-semibold text-dark-blue">Tratamento de canal dói?</span>
+                            <i class="fas fa-chevron-down faq-chevron transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-gray-600">Não. Com o uso de anestésicos modernos e tecnologia avançada, o tratamento de canal é indolor. Nosso foco é garantir seu máximo conforto durante todo o procedimento.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-soft-beige/50 rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                            <span class="text-lg font-semibold text-dark-blue">Quais as vantagens da tecnologia que vocês usam?</span>
+                            <i class="fas fa-chevron-down faq-chevron transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-gray-600">Os instrumentos rotatórios permitem um tratamento mais rápido e preciso. O Raio X digital oferece um diagnóstico imediato com mínima exposição à radiação, tornando o processo mais seguro e eficiente.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-soft-beige/50 rounded-lg shadow-sm overflow-hidden">
+                        <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                            <span class="text-lg font-semibold text-dark-blue">Quantas sessões são necessárias para um tratamento de canal?</span>
+                            <i class="fas fa-chevron-down faq-chevron transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="text-gray-600">Na maioria dos casos, graças à tecnologia utilizada, o tratamento de canal pode ser concluído em uma única sessão, otimizando seu tempo e conforto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Section -->
+        <section id="contato" class="py-20 bg-soft-beige">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl text-center mb-12 fade-in">Agende sua Avaliação</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="fade-in">
+                        <h3 class="text-2xl font-heading mb-6">Informações de Contato</h3>
+                        <div class="space-y-4 text-lg">
+                            <p><i class="fas fa-map-marker-alt w-6 text-primary-pink"></i> Rua Maestro Luiz Ramos de Lima, 73<br><span class="ml-8 text-sm">(Acesso pela rua da antiga MoletoK)</span><br><span class="ml-8">Centro, Itajubá - MG, 37500-014</span></p>
+                            <p><a href="tel:+553536221287" class="hover:text-primary-pink"><i class="fas fa-phone w-6 text-primary-pink"></i> Tel. Fixo: (35) 3622-1287</a></p>
+                            <p><a href="https://wa.me/5535998686030" target="_blank" rel="noopener" class="hover:text-primary-pink"><i class="fab fa-whatsapp w-6 text-primary-pink"></i> WhatsApp Dra. Byanca: (35) 99868-6030</a></p>
+                            <p><a href="https://wa.me/5535988710380" target="_blank" rel="noopener" class="hover:text-primary-pink"><i class="fab fa-whatsapp w-6 text-primary-pink"></i> WhatsApp COE: (35) 98871-0380</a></p>
+                            <p><i class="fas fa-clock w-6 text-primary-pink"></i> Segunda a Sexta: 08:00 – 18:00</p>
+                        </div>
+                        <div class="mt-8 bg-white p-8 rounded-lg text-center shadow-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" class="h-12 mx-auto mb-4">
+                            <div class="text-yellow-400 text-xl mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="text-gray-600 font-bold">5.0</span></div>
+                            <p class="mb-4">Veja o que nossos pacientes dizem sobre nós!</p>
+                            <a href="https://g.co/kgs/Um95u2a" target="_blank" class="bg-dark-blue text-white px-6 py-3 rounded-lg hover:bg-primary-pink transition transform hover:-translate-y-0.5 inline-block">Ver Avaliações no Google</a>
+                        </div>
+                    </div>
+                    <div class="fade-in">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.610580975871!2d-45.4542388!3d-22.4223842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cb7cac478faffb%3A0x8892408018e69ff7!2sCl%C3%ADnica%20COE%20Odontologia%20Especializada!5e0!3m2!1spt-BR!2sbr!4v1672856112940!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0; min-height: 450px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização da Clínica COE" class="rounded-lg shadow-xl"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue text-white text-center py-10">
+        <div class="container mx-auto px-6">
+            <div class="mb-4 text-2xl space-x-6">
+                <a href="#" aria-label="Instagram" class="hover:text-primary-pink transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook" class="hover:text-primary-pink transition"><i class="fab fa-facebook"></i></a>
+                <a href="https://g.co/kgs/Um95u2a" target="_blank" aria-label="Google" class="hover:text-primary-pink transition"><i class="fab fa-google"></i></a>
+            </div>
+            <p>© 2025 Dra. Byanca do Prado - Todos os direitos reservados.</p>
+            <p class="text-sm opacity-80 mt-2">CRO-MG: XXXXX | Clínica COE Odontologia Especializada</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5535998686030" target="_blank" class="fixed bottom-10 right-10 bg-[#25D366] w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl hover:scale-110 transition-transform" aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-y-[150%]');
+            mobileMenu.classList.toggle('translate-y-0');
+        });
+        
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-y-[150%]');
+                mobileMenu.classList.remove('translate-y-0');
+            });
+        });
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Fade-in Animation on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Header shadow on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
