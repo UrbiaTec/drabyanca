@@ -403,7 +403,7 @@
         const text = ev.results[0][0].transcript; sintomasEl.value = (sintomasEl.value + ' ' + text).trim(); recBtn.textContent='🎙️ Ditado por voz';
       };
       recognition.onend = ()=>{ recBtn.textContent='🎙️ Ditado por voz'; };
-    } else { recBtn.disabled = true; recBtn.textContent = '🎙️ Ditado não suportado'; }
+    } else { recBtn.disabled = True; recBtn.textContent = '🎙️ Ditado não suportado'; }
 
     // Regras simples de triagem (client-side)
     function analisarSintomas(txt){
