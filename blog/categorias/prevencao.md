@@ -8,4 +8,4 @@ Todos os artigos relacionados à prevenção de problemas dentários e boas prá
 - [A Importância da Visita Regular ao Dentista](../posts/coming-soon.md)
 - [Escovação Correta: Técnicas e Dicas](../posts/coming-soon.md)
 
-[Voltar para o Blog](../index.md)
+[Voltar para o Blog](../index.html)

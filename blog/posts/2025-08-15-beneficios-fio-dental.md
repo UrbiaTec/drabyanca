@@ -50,4 +50,4 @@ Não. O sangramento geralmente indica inflamação, e o uso correto e regular do
 
 Tem dúvidas sobre saúde bucal? Agende uma consulta em nossa clínica!
 
-[Voltar para o Blog](../index.md)
+[Voltar para o Blog](../index.html)
