@@ -1,1 +1,0 @@
-Conteúdo do arquivo blog_README.md
